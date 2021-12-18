@@ -63,6 +63,12 @@ vagrant box remove bento/debian-8.6
 vagrant status
 ```
 
+* 登入主機
+
+```shell
+vagrant ssh
+```
+
 * 列出主機的相關資訊
 
 ```bash
@@ -104,10 +110,19 @@ vagrant destroy --force
 
 config.vm.define "serverName"
 
+### vagrant 常見問題 
+
+* This command requires a specific VM name to target in a multi-VM environment.
+
+```shell
+vagrant ssh debian10
+```
 
 ## 學習相關資源
 
 [在地端建置Angular+ASP.NET Core的DevOps環境](https://ithelp.ithome.com.tw/users/20107868/ironman/1621)
+
+[30 天入門 Ansible 及 Jenkins [2018]](https://ithelp.ithome.com.tw/users/20103346/ironman/1473)
 
 * Vagrant
 
