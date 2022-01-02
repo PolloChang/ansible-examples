@@ -1,0 +1,4 @@
+---
+- include_tasks: removeDocker.yml
+- include_tasks: addGpg.yml
+- include_tasks: installDocker.yml

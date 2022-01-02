@@ -1,0 +1,41 @@
+---
+# 更新快取
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+- name: Install the package "apt-transport-https"
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: Install the package "ca-certificates"
+  apt:
+    name: ca-certificates
+    state: present
+
+- name: Install the package "curl"
+  apt:
+    name: curl
+    state: present
+
+- name: Install the package "gnupg"
+  apt:
+    name: gnupg
+    state: present
+
+- name: Install the package "lsb-release"
+  apt:
+    name: lsb-release
+    state: present
+
+- name: Add Docker apt key (alternative for older systems without SNI 1).
+  shell: >
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  args:
+    warn: false
+  when: add_repository_key is failed
+
+- name: Add Docker apt key (alternative for older systems without SNI 2).
+  shell: >
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+

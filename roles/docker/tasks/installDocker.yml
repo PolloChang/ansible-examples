@@ -1,0 +1,21 @@
+---
+# 更新快取
+- name: Update repositories cache
+  apt:
+    update_cache: yes
+
+# docker-ce docker-ce-cli containerd.io
+- name: Install the package "docker-ce"
+  apt:
+    name: docker-ce
+    state: present
+
+- name: Install the package "docker-ce-cli"
+  apt:
+    name: docker-ce-cli
+    state: present
+
+- name: Install the package "containerd.io"
+  apt:
+    name: containerd.io
+    state: present

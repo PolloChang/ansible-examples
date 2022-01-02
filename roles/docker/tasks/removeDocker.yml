@@ -1,0 +1,21 @@
+---
+- name: Remove docker
+  apt:
+    name: docker
+    state: absent
+- name: Remove docker-engine
+  apt:
+    name: docker-engine
+    state: absent
+- name: Remove docker.io
+  apt:
+    name: docker.io
+    state: absent
+- name: Remove containerd
+  apt:
+    name: containerd
+    state: absent
+- name: Remove runc
+  apt:
+    name: runc
+    state: absent
