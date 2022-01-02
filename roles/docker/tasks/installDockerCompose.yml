@@ -1,0 +1,24 @@
+---
+- name: download dcker-compose
+  shell: >
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+    
+- name: Changing perm of "/usr/bin/docker-compose", adding "+x"
+  file:
+    path: /usr/bin/docker-compose
+    state: file
+    owner: root
+    group: root
+    mode: 0755
+
+- name: create a symlink file
+  file:
+    src: /usr/bin/docker-compose
+    dest: /usr/local/bin/docker-compose
+    state: link
+
+- name: enable docker
+  systemd:
+    name: docker
+    state: started
+    enabled: yes

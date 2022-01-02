@@ -2,3 +2,8 @@
 - include_tasks: removeDocker.yml
 - include_tasks: addGpg.yml
 - include_tasks: installDocker.yml
+- include_tasks: docker-users.yml
+- include_tasks: installDockerCompose.yml
+
+- name: Reboot at now
+  command: /sbin/shutdown -r now

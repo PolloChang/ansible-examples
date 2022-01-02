@@ -30,10 +30,7 @@
 
 - name: Add Docker apt key (alternative for older systems without SNI 1).
   shell: >
-    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-  args:
-    warn: false
-  when: add_repository_key is failed
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 - name: Add Docker apt key (alternative for older systems without SNI 2).
   shell: >
