@@ -5,5 +5,10 @@
 - include_tasks: docker-users.yml
 - include_tasks: installDockerCompose.yml
 
-- name: Reboot at now
-  command: /sbin/shutdown -r now
+- name: Create {{ docker_home }} directory
+  file:
+    path: "{{ docker_home }}"
+    state: directory
+
+# - name: Reboot at now
+#   command: /sbin/shutdown -r now

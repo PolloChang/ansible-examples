@@ -4,18 +4,11 @@
   apt:
     update_cache: yes
 
-# docker-ce docker-ce-cli containerd.io
-- name: Install the package "docker-ce"
+- name: Install docker-ce
   apt:
-    name: docker-ce
+    name: "{{item}}"
     state: present
-
-- name: Install the package "docker-ce-cli"
-  apt:
-    name: docker-ce-cli
-    state: present
-
-- name: Install the package "containerd.io"
-  apt:
-    name: containerd.io
-    state: present
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io

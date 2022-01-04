@@ -3,6 +3,10 @@
   roles:
       - { role: docker, become: yes }
       # become 代表我們要升高當前使用者權限 （等效於 Unix / Linux 中的 sudo 指令）來運行當前工作
+      # - { role: docker-jenkins, become: yes }
+  # vars:
+  #   - jenkins_admin_user: admin
+  #   - jenkins_admin_pass: admin
   # tasks:
   #   - name: print debug message
   #     debug:
