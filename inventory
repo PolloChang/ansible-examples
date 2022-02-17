@@ -1,9 +1,11 @@
+test
+
 [centos6]
-192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/centos6/libvirt/private_key
+192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/centos6/libvirt/private_key group=centos6
 
 [debian10]
-192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key
+192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key group=debian10
 
 [services]
-192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key
-192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/centos6/libvirt/private_key
+192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key group=services
+192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/centos6/libvirt/private_key group=services

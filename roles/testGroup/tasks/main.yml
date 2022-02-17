@@ -1,0 +1,4 @@
+---
+- name: set firewall {{group}}1
+  include_tasks: service-01.yml
+  when: group == "services"
