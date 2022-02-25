@@ -1,7 +1,7 @@
 test
 
 [centos6]
-192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/centos6/libvirt/private_key group=centos6
+192.168.56.138 ansible_port=22 ansible_user=ansible ansible_ssh_private_key_file=./.ssh/id_rsa server_name=serverName1
 
 [debian10]
 192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key group=debian10
