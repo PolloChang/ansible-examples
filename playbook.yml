@@ -1,7 +1,12 @@
 ---
-- hosts: debian10
+- hosts: centos7
+  tasks:
+  - name: OS:"{{ ansible_distribution }}" Version:"{{ansible_distribution_major_version}}" 
+    ping:
+
+- hosts: centos7
   roles:
-      - { role: pufile }
+      - { role: firewalld, become: yes }
       # become 代表我們要升高當前使用者權限 （等效於 Unix / Linux 中的 sudo 指令）來運行當前工作
       # - { role: docker-jenkins, become: yes }
   # vars:

@@ -3,9 +3,12 @@ test
 [centos6]
 192.168.56.138 ansible_port=22 ansible_user=ansible ansible_ssh_private_key_file=./.ssh/id_rsa server_name=serverName1
 
+[centos7]
+192.168.56.228 ansible_port=22 ansible_user=ansible ansible_ssh_private_key_file=./.ssh/id_rsa server_name=centos7
+
 [debian10]
-192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key group=debian10
+192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=./.ssh/id_rsa group=debian10
 
 [services]
-192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/debian10/libvirt/private_key group=services
-192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=/home/jameschang/Documents/gitContent/PolloChang/ansible-examples/.vagrant/machines/centos6/libvirt/private_key group=services
+192.168.121.181 ansible_port=22 ansible_user=vagrant private-key=./.ssh/id_rsa group=services
+192.168.121.208 ansible_port=22 ansible_user=vagrant private-key=./.ssh/id_rsa group=services

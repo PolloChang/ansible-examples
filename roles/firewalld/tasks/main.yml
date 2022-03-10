@@ -1,0 +1,40 @@
+- name: start firewalld
+  become: yes
+  ansible.builtin.systemd:
+    state: started
+    enabled: yes
+    name: firewalld
+
+- include_tasks: ./tasks/checkFirewalldVersion.yml
+
+# - name: set basic firewalld source use comments
+#   become: yes
+#   command: "{{ item }}"
+#   with_items:
+#     'firewall-cmd --permanent --zone=public --add-source=192.168.56.1'
+
+
+- name: set basic firewalld source
+  become: yes
+  ansible.posix.firewalld:
+    permanent: yes
+    zone: public
+    state: disabled
+    source: "{{ item }}"
+  with_items:
+    '192.168.56.1' 
+
+
+- name: set basic firewalld rich_rule
+  become: yes
+  ansible.posix.firewalld:
+    permanent: yes
+    zone: public
+    state: disabled
+    rich_rule: '{{ item }}'
+  with_items:
+    - 'rule family="ipv4" source address="192.168.56.0/24" port protocol="tcp" port="1521" accept' # 新北網域
+
+- name: save firewalld
+  become: yes
+  command: firewall-cmd --reload

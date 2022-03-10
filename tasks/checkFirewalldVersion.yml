@@ -1,0 +1,8 @@
+- name: check firewalld version
+  become: yes
+  command: firewall-cmd --version
+  ignore_errors: yes
+  register: command_output
+
+- debug:
+    var: command_output.stdout_lines
