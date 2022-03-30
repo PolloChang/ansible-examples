@@ -1,0 +1,17 @@
+---
+- name: get Information ansible_all_ipv4_addresses
+  debug:
+    msg: "{{ansible_all_ipv4_addresses}}"
+
+- name: get Information ansible_default_ipv4.address
+  debug: var=hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2]
+
+- name: right IP
+  when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == "192.168.56.229"
+  debug:
+    msg: right IP
+
+- name: not right IP
+  when: hostvars[inventory_hostname]['ansible_env'].SSH_CONNECTION.split(' ')[2] == "192.168.56.211"
+  debug:
+    msg: not right IP
